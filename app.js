@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 
 const config = {
   user: 'bercik',
-  password: 'szub123boo',
+  password: 'Szub123boo',
   server: 'books.database.windows.net', // You can use 'localhost\\instance' to connect to named instance
   database: 'BooksDB',
 
