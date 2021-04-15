@@ -3,23 +3,9 @@ const chalk = require('chalk');
 const debug = require('debug')('app');
 const morgan = require('morgan');
 const path = require('path');
-const sql = require('mssql');
 
 const app = express();
 const port = process.env.PORT || 3000;
-
-const config = {
-  user: 'bercik',
-  password: 'Szub123boo',
-  server: 'books.database.windows.net', // You can use 'localhost\\instance' to connect to named instance
-  database: 'BooksDB',
-
-  options: {
-    encrypt: true
-  }
-};
-
-sql.connect(config).catch((err) => debug(err));
 
 app.use(morgan('tiny'));
 app.use(express.static(path.join(`${__dirname}/public/`)));
