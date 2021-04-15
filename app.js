@@ -19,8 +19,10 @@ const nav = [{ link: '/books', title: 'Book' },
   { link: '/authors', title: 'Author' }];
 
 const bookRouter = require('./src/routes/booksRoutes.js')(nav);
+const adminRouter = require('./src/routes/adminRoutes.js')(nav);
 
 app.use('/books', bookRouter);
+app.use('/admin', adminRouter);
 
 app.get('/', (req, res) => {
   res.render('index',
@@ -33,5 +35,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  debug(`listening on port ${chalk.green(port)}`);
+  console.log(`listening on port ${chalk.green(port)}`);
 });
